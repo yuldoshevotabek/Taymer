@@ -4,7 +4,7 @@ let second = 0,
 	hours = 0
 let timer
 const btn = document.querySelector('button')
-const oneDiv = document.querySelector('.divcha')
+const oneDiv = document.querySelector('.ulli')
 function start() {
 	if (!res) {
 		timer = setInterval(update, 10)
@@ -13,9 +13,15 @@ function start() {
 		clearInterval(timer)
 		document.querySelector('button').textContent = 'START'
 		const counter = document.getElementById('timerr').textContent
-		const newElement = document.createElement('h3')
-		newElement.innerHTML = `${counter}`
+		const newElement = document.createElement('li')
+		newElement.innerHTML = `${counter} <button class="bosh">X</button>`
 		oneDiv.appendChild(newElement)
+		const boshi = document.querySelectorAll('.ulli li')
+		boshi.forEach(item => {
+			item.addEventListener('click', () => {
+				item.remove()
+			})
+		})
 	}
 	res = !res
 }
@@ -24,7 +30,7 @@ btn.addEventListener('dblclick', () => {
 	second = 0
 	minut = 0
 	hours = 0
-	const bir = document.querySelectorAll('.divcha h3')
+	const bir = document.querySelectorAll('.ulli li')
 	bir.forEach(item => {
 		item.remove()
 	})

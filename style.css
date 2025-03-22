@@ -1,6 +1,21 @@
+* {
+	list-style: none;
+}
 #timerr {
 	font-size: 5rem;
 	text-align: center;
+}
+.bosh {
+	display: inline;
+	width: 30px;
+	border: 1px solid red;
+	margin-left: 1rem;
+	margin-bottom: 0.5rem;
+	border-radius: 50%;
+	transition: all 0.3s linear;
+}
+.bosh:active {
+	transform: scale(0.95);
 }
 button {
 	width: 10rem;
